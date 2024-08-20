@@ -21,6 +21,8 @@ namespace filmesApp2A
             InitializeComponent();
             this.db = new Contexto();
             this.anterior = anterior;
+            Pesquisar("");
+
         }
 
         private void frmGerenciarFilme_Load(object sender, EventArgs e)
@@ -52,7 +54,8 @@ namespace filmesApp2A
 
         private void btgerenciarelenco_Click(object sender, EventArgs e)
         {
-
+            frmGerenciarElenco f = new frmGerenciarElenco(db, selecionado);
+            f.ShowDialog();
         }
 
         private void bteditar_Click(object sender, EventArgs e)
@@ -92,6 +95,23 @@ namespace filmesApp2A
 
                 Pesquisar(txtPesquisar.Text);
             }
+        }
+
+        private void frmGerenciarFilme_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.db.Dispose();
+            anterior.Show();
+        }
+
+        private void dgvFilmes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Pesquisar(btpesquisar.Text);
+
+        }
+
+        private void dgvFilmes_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

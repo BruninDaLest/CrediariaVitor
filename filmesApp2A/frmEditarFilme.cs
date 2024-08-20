@@ -15,6 +15,7 @@ namespace filmesApp2A
     {
         Contexto db;
         Filme filme;
+       
         public frmEditarFilme(Filme filme)
         {
             InitializeComponent();
@@ -22,7 +23,13 @@ namespace filmesApp2A
             this.filme = filme;
 
             txtNome.Text = filme.Nome;
-            nupLancamento.Value = (decimal) filme.AnoLancamento;
+            nupLancamento.Value = (decimal)filme.AnoLancamento;
+
+            cbxPais.DataSource = db.Pais.ToList();
+
+            cbxPais.SelectedIndex = cbxPais.FindStringExact(filme.Nacionalidade.Nome);
+
+            dgvAtores.DataSource = filme.Atores;
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
@@ -38,5 +45,12 @@ namespace filmesApp2A
             this.db.SaveChanges();
             MessageBox.Show("Sucesso!");
         }
+
+        private void frmEditarFilme_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+      
     }
 }

@@ -31,12 +31,12 @@
             txtNome = new TextBox();
             label1 = new Label();
             btSalvar = new Button();
-            dgvFilmes = new DataGridView();
+            dgvAtores = new DataGridView();
             cbxPais = new ComboBox();
             label3 = new Label();
             label2 = new Label();
             nupLancamento = new NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)dgvFilmes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvAtores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nupLancamento).BeginInit();
             SuspendLayout();
             // 
@@ -66,13 +66,13 @@
             btSalvar.UseVisualStyleBackColor = true;
             btSalvar.Click += btSalvar_Click;
             // 
-            // dgvFilmes
+            // dgvAtores
             // 
-            dgvFilmes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvFilmes.Location = new Point(57, 202);
-            dgvFilmes.Name = "dgvFilmes";
-            dgvFilmes.Size = new Size(491, 216);
-            dgvFilmes.TabIndex = 10;
+            dgvAtores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAtores.Location = new Point(57, 202);
+            dgvAtores.Name = "dgvAtores";
+            dgvAtores.Size = new Size(491, 216);
+            dgvAtores.TabIndex = 10;
             // 
             // cbxPais
             // 
@@ -104,6 +104,7 @@
             // nupLancamento
             // 
             nupLancamento.Location = new Point(158, 119);
+            nupLancamento.Maximum = new decimal(new int[] { 4000, 0, 0, 0 });
             nupLancamento.Name = "nupLancamento";
             nupLancamento.Size = new Size(197, 23);
             nupLancamento.TabIndex = 12;
@@ -115,7 +116,7 @@
             ClientSize = new Size(609, 450);
             Controls.Add(nupLancamento);
             Controls.Add(btSalvar);
-            Controls.Add(dgvFilmes);
+            Controls.Add(dgvAtores);
             Controls.Add(cbxPais);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -123,7 +124,8 @@
             Controls.Add(txtNome);
             Name = "frmEditarFilme";
             Text = "frmEditarFilme";
-            ((System.ComponentModel.ISupportInitialize)dgvFilmes).EndInit();
+            Load += frmEditarFilme_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvAtores).EndInit();
             ((System.ComponentModel.ISupportInitialize)nupLancamento).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -134,7 +136,7 @@
         private TextBox txtNome;
         private Label label1;
         private Button btSalvar;
-        private DataGridView dgvFilmes;
+        private DataGridView dgvAtores;
         private ComboBox cbxPais;
         private Label label3;
         private Label label2;

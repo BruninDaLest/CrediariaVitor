@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             txtPesquisar = new TextBox();
             btpesquisar = new Button();
             btadicionar = new Button();
@@ -35,7 +36,13 @@
             bteditar = new Button();
             btexcluir = new Button();
             dgvFilmes = new DataGridView();
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            anoLancamentoDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nacionalidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            filmeBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)dgvFilmes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)filmeBindingSource).BeginInit();
             SuspendLayout();
             // 
             // txtPesquisar
@@ -67,6 +74,7 @@
             // 
             // btgerenciarelenco
             // 
+            btgerenciarelenco.Enabled = false;
             btgerenciarelenco.Location = new Point(204, 235);
             btgerenciarelenco.Name = "btgerenciarelenco";
             btgerenciarelenco.Size = new Size(108, 23);
@@ -77,6 +85,7 @@
             // 
             // bteditar
             // 
+            bteditar.Enabled = false;
             bteditar.Location = new Point(318, 235);
             bteditar.Name = "bteditar";
             bteditar.Size = new Size(49, 23);
@@ -87,6 +96,7 @@
             // 
             // btexcluir
             // 
+            btexcluir.Enabled = false;
             btexcluir.Location = new Point(373, 235);
             btexcluir.Name = "btexcluir";
             btexcluir.Size = new Size(50, 23);
@@ -97,12 +107,44 @@
             // 
             // dgvFilmes
             // 
+            dgvFilmes.AutoGenerateColumns = false;
             dgvFilmes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvFilmes.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, anoLancamentoDataGridViewTextBoxColumn, nacionalidadeDataGridViewTextBoxColumn });
+            dgvFilmes.DataSource = filmeBindingSource;
             dgvFilmes.Location = new Point(41, 64);
             dgvFilmes.Name = "dgvFilmes";
             dgvFilmes.Size = new Size(382, 165);
             dgvFilmes.TabIndex = 6;
             dgvFilmes.CellClick += dgvFilmes_CellClick;
+            dgvFilmes.CellContentClick += dgvFilmes_CellContentClick_1;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // anoLancamentoDataGridViewTextBoxColumn
+            // 
+            anoLancamentoDataGridViewTextBoxColumn.DataPropertyName = "AnoLancamento";
+            anoLancamentoDataGridViewTextBoxColumn.HeaderText = "AnoLancamento";
+            anoLancamentoDataGridViewTextBoxColumn.Name = "anoLancamentoDataGridViewTextBoxColumn";
+            // 
+            // nacionalidadeDataGridViewTextBoxColumn
+            // 
+            nacionalidadeDataGridViewTextBoxColumn.DataPropertyName = "Nacionalidade";
+            nacionalidadeDataGridViewTextBoxColumn.HeaderText = "Nacionalidade";
+            nacionalidadeDataGridViewTextBoxColumn.Name = "nacionalidadeDataGridViewTextBoxColumn";
+            // 
+            // filmeBindingSource
+            // 
+            filmeBindingSource.DataSource = typeof(Models.Filme);
             // 
             // frmGerenciarFilme
             // 
@@ -118,8 +160,10 @@
             Controls.Add(txtPesquisar);
             Name = "frmGerenciarFilme";
             Text = "Gerenciar Filme";
+            FormClosing += frmGerenciarFilme_FormClosing;
             Load += frmGerenciarFilme_Load;
             ((System.ComponentModel.ISupportInitialize)dgvFilmes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)filmeBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -133,5 +177,10 @@
         private Button bteditar;
         private Button btexcluir;
         private DataGridView dgvFilmes;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn anoLancamentoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nacionalidadeDataGridViewTextBoxColumn;
+        private BindingSource filmeBindingSource;
     }
 }

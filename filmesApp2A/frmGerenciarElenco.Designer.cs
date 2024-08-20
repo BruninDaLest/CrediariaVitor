@@ -1,6 +1,6 @@
 ﻿namespace filmesApp2A
 {
-    partial class frmAtores
+    partial class frmGerenciarElenco
     {
         /// <summary>
         /// Required designer variable.
@@ -29,68 +29,16 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            txtBusca = new TextBox();
-            btBuscar = new Button();
-            btCadastrar = new Button();
-            btEditar = new Button();
-            btRemover = new Button();
             dgvAtores = new DataGridView();
             idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             nacionalidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             atorBindingSource = new BindingSource(components);
+            btadicionar = new Button();
+            btexcluir = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvAtores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)atorBindingSource).BeginInit();
             SuspendLayout();
-            // 
-            // txtBusca
-            // 
-            txtBusca.Location = new Point(22, 21);
-            txtBusca.Name = "txtBusca";
-            txtBusca.Size = new Size(609, 23);
-            txtBusca.TabIndex = 0;
-            // 
-            // btBuscar
-            // 
-            btBuscar.Location = new Point(637, 21);
-            btBuscar.Name = "btBuscar";
-            btBuscar.Size = new Size(75, 23);
-            btBuscar.TabIndex = 1;
-            btBuscar.Text = "Buscar";
-            btBuscar.UseVisualStyleBackColor = true;
-            btBuscar.Click += btBuscar_Click;
-            // 
-            // btCadastrar
-            // 
-            btCadastrar.Location = new Point(22, 346);
-            btCadastrar.Name = "btCadastrar";
-            btCadastrar.Size = new Size(111, 23);
-            btCadastrar.TabIndex = 2;
-            btCadastrar.Text = "Cadastrar Ator";
-            btCadastrar.UseVisualStyleBackColor = true;
-            btCadastrar.Click += btCadastrar_Click;
-            // 
-            // btEditar
-            // 
-            btEditar.Enabled = false;
-            btEditar.Location = new Point(536, 346);
-            btEditar.Name = "btEditar";
-            btEditar.Size = new Size(75, 23);
-            btEditar.TabIndex = 3;
-            btEditar.Text = "Editar Ator";
-            btEditar.UseVisualStyleBackColor = true;
-            btEditar.Click += btEditar_Click;
-            // 
-            // btRemover
-            // 
-            btRemover.Enabled = false;
-            btRemover.Location = new Point(617, 346);
-            btRemover.Name = "btRemover";
-            btRemover.Size = new Size(95, 23);
-            btRemover.TabIndex = 4;
-            btRemover.Text = "Remover Ator";
-            btRemover.UseVisualStyleBackColor = true;
-            btRemover.Click += btRemover_Click;
             // 
             // dgvAtores
             // 
@@ -98,12 +46,11 @@
             dgvAtores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAtores.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, nacionalidadeDataGridViewTextBoxColumn });
             dgvAtores.DataSource = atorBindingSource;
-            dgvAtores.Location = new Point(22, 59);
+            dgvAtores.Location = new Point(84, 56);
             dgvAtores.Name = "dgvAtores";
-            dgvAtores.Size = new Size(690, 270);
-            dgvAtores.TabIndex = 5;
+            dgvAtores.Size = new Size(335, 177);
+            dgvAtores.TabIndex = 0;
             dgvAtores.CellClick += dgvAtores_CellClick;
-            dgvAtores.CellContentClick += dgvAtores_CellContentClick;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -127,37 +74,47 @@
             // 
             atorBindingSource.DataSource = typeof(Models.Ator);
             // 
-            // frmAtores
+            // btadicionar
+            // 
+            btadicionar.Location = new Point(84, 254);
+            btadicionar.Name = "btadicionar";
+            btadicionar.Size = new Size(75, 23);
+            btadicionar.TabIndex = 1;
+            btadicionar.Text = "Adicionar";
+            btadicionar.UseVisualStyleBackColor = true;
+            btadicionar.Click += btadicionar_Click;
+            // 
+            // btexcluir
+            // 
+            btexcluir.Enabled = false;
+            btexcluir.Location = new Point(344, 254);
+            btexcluir.Name = "btexcluir";
+            btexcluir.Size = new Size(75, 23);
+            btexcluir.TabIndex = 2;
+            btexcluir.Text = "Excluir";
+            btexcluir.UseVisualStyleBackColor = true;
+            btexcluir.Click += btexcluir_Click;
+            // 
+            // frmGerenciarElenco
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(729, 380);
+            ClientSize = new Size(843, 450);
+            Controls.Add(btexcluir);
+            Controls.Add(btadicionar);
             Controls.Add(dgvAtores);
-            Controls.Add(btRemover);
-            Controls.Add(btEditar);
-            Controls.Add(btCadastrar);
-            Controls.Add(btBuscar);
-            Controls.Add(txtBusca);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "frmAtores";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Atores";
-            FormClosing += frmAtores_FormClosing;
-            Load += frmAtores_Load;
+            Name = "frmGerenciarElenco";
+            Text = "Gerenciar Elenco";
             ((System.ComponentModel.ISupportInitialize)dgvAtores).EndInit();
             ((System.ComponentModel.ISupportInitialize)atorBindingSource).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private TextBox txtBusca;
-        private Button btBuscar;
-        private Button btCadastrar;
-        private Button btEditar;
-        private Button btRemover;
         private DataGridView dgvAtores;
+        private Button btadicionar;
+        private Button btexcluir;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nacionalidadeDataGridViewTextBoxColumn;

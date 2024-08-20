@@ -97,5 +97,10 @@ namespace filmesApp2A
         {
 
         }
+
+        private void frmAtores_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
