@@ -58,6 +58,7 @@
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(266, 23);
             txtNome.TabIndex = 2;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
             // frmNovoAtorElenco
             // 

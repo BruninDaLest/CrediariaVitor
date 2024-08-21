@@ -70,5 +70,10 @@ namespace filmesApp2A
 
             btexcluir.Enabled = true;
         }
+
+        private void dgvAtores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

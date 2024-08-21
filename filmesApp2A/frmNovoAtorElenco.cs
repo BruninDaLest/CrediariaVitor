@@ -40,7 +40,12 @@ namespace filmesApp2A
             }
             else
                 MessageBox.Show("Ator não existe");
-                
+
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

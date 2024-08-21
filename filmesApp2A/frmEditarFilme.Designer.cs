@@ -50,7 +50,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(99, 44);
+            label1.Location = new Point(100, 39);
             label1.Name = "label1";
             label1.Size = new Size(43, 15);
             label1.TabIndex = 5;
@@ -86,16 +86,17 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(41, 127);
+            label3.Location = new Point(42, 121);
             label3.Name = "label3";
             label3.Size = new Size(101, 15);
             label3.TabIndex = 8;
             label3.Text = "Ano Lançamento:";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(57, 88);
+            label2.Location = new Point(57, 83);
             label2.Name = "label2";
             label2.Size = new Size(86, 15);
             label2.TabIndex = 7;

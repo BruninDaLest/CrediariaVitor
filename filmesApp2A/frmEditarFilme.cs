@@ -15,7 +15,7 @@ namespace filmesApp2A
     {
         Contexto db;
         Filme filme;
-       
+
         public frmEditarFilme(Filme filme)
         {
             InitializeComponent();
@@ -48,9 +48,12 @@ namespace filmesApp2A
 
         private void frmEditarFilme_Load(object sender, EventArgs e)
         {
-           
+
         }
 
-      
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

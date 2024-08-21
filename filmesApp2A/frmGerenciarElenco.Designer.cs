@@ -30,49 +30,30 @@
         {
             components = new System.ComponentModel.Container();
             dgvAtores = new DataGridView();
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nomeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nacionalidadeDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             atorBindingSource = new BindingSource(components);
             btadicionar = new Button();
             btexcluir = new Button();
+            atorBindingSource1 = new BindingSource(components);
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgvAtores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)atorBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)atorBindingSource1).BeginInit();
             SuspendLayout();
             // 
             // dgvAtores
             // 
             dgvAtores.AutoGenerateColumns = false;
             dgvAtores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAtores.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nomeDataGridViewTextBoxColumn, nacionalidadeDataGridViewTextBoxColumn });
-            dgvAtores.DataSource = atorBindingSource;
+            dgvAtores.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3 });
+            dgvAtores.DataSource = atorBindingSource1;
             dgvAtores.Location = new Point(84, 56);
             dgvAtores.Name = "dgvAtores";
             dgvAtores.Size = new Size(335, 177);
             dgvAtores.TabIndex = 0;
             dgvAtores.CellClick += dgvAtores_CellClick;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // nacionalidadeDataGridViewTextBoxColumn
-            // 
-            nacionalidadeDataGridViewTextBoxColumn.DataPropertyName = "Nacionalidade";
-            nacionalidadeDataGridViewTextBoxColumn.HeaderText = "Nacionalidade";
-            nacionalidadeDataGridViewTextBoxColumn.Name = "nacionalidadeDataGridViewTextBoxColumn";
-            // 
-            // atorBindingSource
-            // 
-            atorBindingSource.DataSource = typeof(Models.Ator);
+            dgvAtores.CellContentClick += dgvAtores_CellContentClick;
             // 
             // btadicionar
             // 
@@ -95,6 +76,28 @@
             btexcluir.UseVisualStyleBackColor = true;
             btexcluir.Click += btexcluir_Click;
             // 
+            // atorBindingSource1
+            // 
+            atorBindingSource1.DataSource = typeof(Models.Ator);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            dataGridViewTextBoxColumn1.HeaderText = "Id";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.DataPropertyName = "Nacionalidade";
+            dataGridViewTextBoxColumn3.HeaderText = "Nacionalidade";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
             // frmGerenciarElenco
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -107,6 +110,7 @@
             Text = "Gerenciar Elenco";
             ((System.ComponentModel.ISupportInitialize)dgvAtores).EndInit();
             ((System.ComponentModel.ISupportInitialize)atorBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)atorBindingSource1).EndInit();
             ResumeLayout(false);
         }
 
@@ -119,5 +123,9 @@
         private DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nacionalidadeDataGridViewTextBoxColumn;
         private BindingSource atorBindingSource;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private BindingSource atorBindingSource1;
     }
 }
